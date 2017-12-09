@@ -30,3 +30,8 @@
       )
     )
   )
+
+(defn caesar-encrypt
+  [text key]
+  (apply str (mapv #(shift % key) text))
+)

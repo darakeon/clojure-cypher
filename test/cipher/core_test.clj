@@ -33,3 +33,11 @@
          \a 3 \d
          \z 1 \a)
        )
+
+(facts "cipher a text"
+       (tabular
+         (core/caesar-encrypt ?char ?key) => ?result
+         ?char ?key ?result
+         "abc" 7 "hij"
+         "apple" 20 "ujjfy")
+       )
