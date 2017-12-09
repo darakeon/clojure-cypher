@@ -43,11 +43,11 @@
 
 (defn get-letters
   [text]
-  (let [lowerText (clojure.string/lower-case text)]
-    (apply str
-           (filterv #(Character/isLetter %) lowerText)
-           )
-    )
+    (
+      ->> (clojure.string/lower-case text)
+          (filterv #(Character/isLetter %))
+          (apply str)
+          )
   )
 
 (defn count-letters
