@@ -52,13 +52,33 @@
          "ujjfy" 20 "apple"
          "gtxyts" 5 "boston"
          "mvytebolbsnqo" 10 "clojurebridge"
+
          )
        )
+
+(def bigWord "radyjgtxhpsncpbxrvtctgpaejgedhtegdvgpbbxcvapcvjpvtrdbqxcxcviwtpeegdprwpqxaxinpcsxcitgprixktstktadebtciduphrgxeixcvapcvjpvtlxiwpctuuxrxtcipcsgdqjhixcugphigjrijgtudgbjaixiwgtpstsegdvgpbbxcvo")
+(def bigWordCount
+  {\a 7, \b 8, \c 16, \d 10, \e 8, \f 0, \g 16, \h 5, \i 13, \j 8, \k 2, \l 1, \m 0,
+   \n 2, \o 1, \p 19, \q 3, \r 8, \s 6, \t 17, \u 5, \v 11, \w 4, \x 17, \y 1, \z 0})
+
+(def aadvarkCount
+  {\a 3, \b 0, \c 0, \d 1, \e 0, \f 0, \g 0, \h 0, \i 0, \j 0, \k 1, \l 0, \m 0,
+   \n 0, \o 0, \p 0, \q 0, \r 1, \s 0, \t 0, \u 0, \v 1, \w 0, \x 0, \y 0, \z 0})
 
 (fact "remove non-letter characters and make it lowercase"
       (core/get-letters "Hello, friend!") => "hellofriend"
       )
 
-(fact "count letters"
-      (core/count-letters \a "aadvark") => 3
-      )
+(facts "count letters"
+       (fact "one letter in a text"
+             (core/count-letters \a "aadvark") => 3
+             )
+       (fact "all letters in a text"
+             (tabular
+               (core/count-all-letters ?text) => ?result
+               ?text ?result
+               "aadvark" aadvarkCount
+               bigWord bigWordCount
+               )
+             )
+       )

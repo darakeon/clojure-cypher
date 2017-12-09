@@ -53,3 +53,11 @@
        )
   )
 
+(def alphabet (mapv to-char (range 26)))
+
+(defn count-all-letters
+  [text]
+  (->> (mapv #(count-letters % text) alphabet)
+       (zipmap alphabet)
+       )
+  )
