@@ -52,3 +52,6 @@
          "mvytebolbsnqo" 10 "clojurebridge"
          )
        )
+
+(fact "remove non-letter characters and make it lowercase"
+      (core/get-letters "Hello, friend!") => "hellofriend")

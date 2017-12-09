@@ -40,3 +40,12 @@
   [text key]
   (caesar-encrypt text (- 0 key))
   )
+
+(defn get-letters
+  [text]
+  (clojure.string/lower-case
+    (apply str
+           (filterv #(Character/isLetter %) text)
+           )
+    )
+  )
