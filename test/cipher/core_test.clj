@@ -41,3 +41,14 @@
          "abc" 7 "hij"
          "apple" 20 "ujjfy")
        )
+
+(facts "decipher a text"
+       (tabular
+         (core/caesar-decrypt ?char ?key) => ?result
+         ?char ?key ?result
+         "hij" 7 "abc"
+         "ujjfy" 20 "apple"
+         "gtxyts" 5 "boston"
+         "mvytebolbsnqo" 10 "clojurebridge"
+         )
+       )

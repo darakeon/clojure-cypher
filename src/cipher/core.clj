@@ -35,3 +35,8 @@
   [text key]
   (apply str (mapv #(shift % key) text))
 )
+
+(defn caesar-decrypt
+  [text key]
+  (caesar-encrypt text (- 0 key))
+  )
