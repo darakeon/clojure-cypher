@@ -47,6 +47,9 @@
 
 (defn count-letters
   [letter text]
-  (count (filterv #(= letter %) text))
+  (->> (clojure.string/lower-case text)
+       (filterv #(= letter %))
+       (count)
+       )
   )
 
