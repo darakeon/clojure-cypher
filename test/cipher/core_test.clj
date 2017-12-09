@@ -39,13 +39,15 @@
          (core/caesar-encrypt ?char ?key) => ?result
          ?char ?key ?result
          "abc" 7 "hij"
-         "apple" 20 "ujjfy")
+         "apple" 20 "ujjfy"
+         "Hello, friend!" 5 "mjqqtkwnjsi"
+         )
        )
 
 (facts "decipher a text"
        (tabular
-         (core/caesar-decrypt ?char ?key) => ?result
-         ?char ?key ?result
+         (core/caesar-decrypt ?text ?key) => ?result
+         ?text ?key ?result
          "hij" 7 "abc"
          "ujjfy" 20 "apple"
          "gtxyts" 5 "boston"
@@ -54,4 +56,5 @@
        )
 
 (fact "remove non-letter characters and make it lowercase"
-      (core/get-letters "Hello, friend!") => "hellofriend")
+      (core/get-letters "Hello, friend!") => "hellofriend"
+      )

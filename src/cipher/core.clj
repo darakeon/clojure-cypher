@@ -33,7 +33,7 @@
 
 (defn caesar-encrypt
   [text key]
-  (apply str (mapv #(shift % key) text))
+  (apply str (mapv #(shift % key) (get-letters text)))
 )
 
 (defn caesar-decrypt
@@ -43,9 +43,9 @@
 
 (defn get-letters
   [text]
-  (clojure.string/lower-case
+  (let [lowerText (clojure.string/lower-case text)]
     (apply str
-           (filterv #(Character/isLetter %) text)
+           (filterv #(Character/isLetter %) lowerText)
            )
     )
   )
