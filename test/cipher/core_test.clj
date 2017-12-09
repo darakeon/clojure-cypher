@@ -25,3 +25,11 @@
        (fact "position 0 returns a"
              (core/to-char 0) => \a)
        )
+
+(facts "cipher a letter"
+       (tabular
+         (core/shift ?char ?key) => ?result
+         ?char ?key ?result
+         \a 3 \d
+         \z 1 \a)
+       )

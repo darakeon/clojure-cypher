@@ -21,3 +21,12 @@
       )
     )
   )
+
+(defn shift
+  [letter-char key]
+  (let [number (to-int letter-char)]
+    (let [ciphered (+ number key)]
+      (to-char (mod ciphered 26))
+      )
+    )
+  )
