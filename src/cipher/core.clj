@@ -26,6 +26,14 @@
     )
   )
 
+(defn get-letters
+  [text]
+  (->> (clojure.string/lower-case text)
+       (filterv #(Character/isLetter %))
+       (apply str)
+       )
+  )
+
 (defn caesar-encrypt
   [text key]
   (apply str (mapv #(shift % key) (get-letters text)))
@@ -36,14 +44,6 @@
   (caesar-encrypt text (- 0 key))
   )
 
-(defn get-letters
-  [text]
-    (
-      ->> (clojure.string/lower-case text)
-          (filterv #(Character/isLetter %))
-          (apply str)
-          )
-  )
 
 (defn count-letters
   [letter text]
