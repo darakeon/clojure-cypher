@@ -49,3 +49,8 @@
            )
     )
   )
+
+(defn count-letters
+  [letter text]
+  (count (filterv #(= letter %) text))
+  )

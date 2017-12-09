@@ -58,3 +58,7 @@
 (fact "remove non-letter characters and make it lowercase"
       (core/get-letters "Hello, friend!") => "hellofriend"
       )
+
+(fact "count letters"
+      (core/count-letters \a "aadvark") => 3
+      )
