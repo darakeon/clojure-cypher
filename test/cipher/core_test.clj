@@ -20,3 +20,8 @@
          \c 2
          \d 3)
        )
+
+(facts "takes a number and returns the letter by position in the alphabet: 0 = a, 1 = b, etc"
+       (fact "position 0 returns a"
+             (core/to-char 0) => \a)
+       )
